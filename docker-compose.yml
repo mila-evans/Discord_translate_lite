@@ -1,0 +1,11 @@
+# docker-compose.yml
+version: '3'
+
+services:
+  python-app:
+    build: .
+    container_name: translator-app
+    volumes:
+      - .:/app  # ローカルのディレクトリをコンテナにマウント
+    command: python bot_translate.py  # 実行するコマンド
+    restart: always
