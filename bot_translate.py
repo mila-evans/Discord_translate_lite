@@ -2,6 +2,21 @@ import discord
 import requests
 from langdetect import detect
 import os
+from flask import Flask
+import threading
+
+app = Flask(__name__)
+
+@app.route("/")
+def home():
+    return "Bot is running!"
+
+def run():
+    app.run(host="0.0.0.0", port=int(os.getenv("PORT", 8000)))
+
+# HTTPサーバーをバックグラウンドで実行
+server_thread = threading.Thread(target=run)
+server_thread.start()
 
 Discord_Token = os.getenv("DISCORD_TOKEN")
 
