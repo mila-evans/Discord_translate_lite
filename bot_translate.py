@@ -49,7 +49,7 @@ async def on_message(message):
         await client.close()
         exit()
 
-    DeepL_Token = "os.getenv("DEEPL_TOKEN")"
+    DeepL_Token = os.getenv("DEEPL_TOKEN")
     DeepL_API_URL = "https://api-free.deepl.com/v2/translate"
 
     # 言語を自動判定する
