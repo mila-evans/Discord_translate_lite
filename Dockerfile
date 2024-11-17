@@ -5,7 +5,7 @@ FROM python:3.10
 WORKDIR /app
 
 # 必要なファイルをコピー
-COPY bot.py /app/bot.py
+COPY bot_translate.py /app/bot.py
 COPY requirements.txt /app/requirements.txt
 
 # パッケージをインストール
