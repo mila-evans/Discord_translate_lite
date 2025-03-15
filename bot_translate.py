@@ -4,12 +4,8 @@ import discord
 from discord.ext import commands
 import requests
 from langdetect import detect
-from dotenv import load_dotenv
 import os
 import json
-
-# .env ファイルを読み込む
-load_dotenv()
 
 # Flask アプリケーション
 app = Flask(__name__)
