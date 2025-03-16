@@ -75,6 +75,8 @@ def detect_language(text):
         "zh-tw": "JA",  # 繁体字も考慮
         "ko": "KO",
         "fr": "FR",
+        "zh": "ZH",
+        
     }
 
     # 一番信頼度の高い言語を取得
@@ -146,9 +148,9 @@ async def list_translation_channels(interaction: discord.Interaction):
 async def set_translation_language(interaction: discord.Interaction, target_lang: str):
     guild_id = str(interaction.guild.id)
     
-    supported_languages = ["EN", "KO", "FR", "ZH-HANS"]
+    supported_languages = ["EN", "KO", "FR", "ZH"]
     if target_lang.upper() not in supported_languages:
-        await interaction.response.send_message("❌ 対応していない言語です！ (対応言語: EN, KO, FR, ZH-HANS)")
+        await interaction.response.send_message("❌ 対応していない言語です！ (対応言語: EN, KO, FR, ZH)")
         return
     
     translation_settings[guild_id] = target_lang.upper()
