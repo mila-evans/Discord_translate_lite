@@ -75,8 +75,7 @@ def detect_language(text):
         "zh-tw": "JA",  # 繁体字も考慮
         "ko": "KO",
         "fr": "FR",
-        "zh": "ZH",
-        
+        "zh": "ZH",      
     }
 
     # 一番信頼度の高い言語を取得
@@ -195,4 +194,3 @@ async def on_message(message):
         await message.channel.send(f"❌ 翻訳に失敗しました（{response.status_code}）")
 
 bot.run(Discord_Token)
-
